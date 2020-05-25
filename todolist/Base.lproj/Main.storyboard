@@ -76,15 +76,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ly khong lam chi het" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sXo-2H-DDP">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ly khong lam chi het" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sXo-2H-DDP">
                                                     <rect key="frame" x="12" y="0.0" width="402" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="keK-VJ-Ks2"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done" destination="JOD-Xe-DEw" eventType="editingDidEndOnExit" id="53I-EC-bhM"/>
+                                                        <outlet property="delegate" destination="JOD-Xe-DEw" id="nnb-Hw-325"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -110,13 +111,14 @@
                                 <action selector="cancel" destination="JOD-Xe-DEw" id="wnu-TN-OcR"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="SP6-aj-4pm">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="SP6-aj-4pm">
                             <connections>
                                 <action selector="done" destination="JOD-Xe-DEw" id="SFg-RB-HqS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneBarButton" destination="SP6-aj-4pm" id="ljx-Nb-8LU"/>
                         <outlet property="textField" destination="sXo-2H-DDP" id="Iqx-3r-LNK"/>
                     </connections>
                 </tableViewController>
