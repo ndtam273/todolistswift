@@ -8,12 +8,28 @@
 
 import UIKit
 
-class AddItemViewController: UITableViewController, UITextFieldDelegate {
+protocol ItemDetailViewControllerDelegate: class {
+    func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
+    func addITemViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
+}
+
+class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
+    // Edit Item
+       var itemToEdit: ChecklistItem?
+    
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    weak var delegate: ItemDetailViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let item = itemToEdit {
+            title = "Edit Item"
+            textField.text = item.text
+            doneBarButton.isEnabled = true
+        }
 
      
     }
@@ -25,12 +41,21 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Actions
     @IBAction func cancel()
     {
-        navigationController?.popViewController(animated: true)
+        delegate?.itemDetailViewControllerDidCancel(self)
     }
-    @IBAction func done()
-    {
-        dismiss(animated: true, completion: nil)
+    @IBAction func done() {
+        if let item = itemToEdit {
+            item.text = textField.text!
+            delegate?.addITemViewController(self, didFinishEditing: item)
+        } else {
+            let item = ChecklistItem()
+            item.text = textField.text!
+            delegate?.itemDetailViewController(self, didFinishAdding: item)
+        }
+        
     }
+        
+    
    
     // MARK:- Table View Delegates
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
