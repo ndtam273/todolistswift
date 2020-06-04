@@ -174,7 +174,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         saveChecklistsItems()
     }
     func addITemViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem) {
-        if let index = items.firstIndex(where: {$0 === item}) {
+        if let index = items.firstIndex(of: item) {
             let indexPath = IndexPath(row: index, section: 0)
             if let cell = tableView.cellForRow(at: indexPath) {
                 configureText(for: cell, with: item)

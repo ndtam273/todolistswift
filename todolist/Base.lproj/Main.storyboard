@@ -216,7 +216,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ly khong lam chi het" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f06-pp-BnR">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ngay hom nay cua Ly" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f06-pp-BnR">
                                                     <rect key="frame" x="12" y="0.0" width="402" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="4vU-xb-8px"/>
@@ -248,17 +248,17 @@
                     <navigationItem key="navigationItem" title="Add Checklist" largeTitleDisplayMode="never" id="1xS-BY-s30">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="Ing-Tn-cOy">
                             <connections>
-                                <action selector="cancel" destination="23e-Yv-HGv" id="C6k-t1-onp"/>
+                                <action selector="cancel" destination="23e-Yv-HGv" id="meX-cJ-DMl"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="iag-j0-8Qb">
                             <connections>
-                                <action selector="done" destination="23e-Yv-HGv" id="bze-Yh-bs1"/>
+                                <action selector="done" destination="23e-Yv-HGv" id="S4Q-3v-8FE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="doneBarButton" destination="iag-j0-8Qb" id="Tiq-GC-uvK"/>
+                        <outlet property="doneBarButton" destination="iag-j0-8Qb" id="fdL-6W-KQB"/>
                         <outlet property="textField" destination="f06-pp-BnR" id="HNe-Rb-Mtz"/>
                     </connections>
                 </tableViewController>
