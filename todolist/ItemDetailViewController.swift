@@ -27,7 +27,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
         
         if let item = itemToEdit {
             title = "Edit Item"
-            textField.text = item.text
+            textField.text! = item.text
             doneBarButton.isEnabled = true
         }
 

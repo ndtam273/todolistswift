@@ -115,7 +115,7 @@
         <!--Add Item-->
         <scene sceneID="OEy-BN-BHM">
             <objects>
-                <tableViewController id="JOD-Xe-DEw" sceneMemberID="viewController">
+                <tableViewController id="JOD-Xe-DEw" customClass="ItemDetailViewController" customModule="todolist" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Rda-47-UXB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,7 +138,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
-                                                        <action selector="done" destination="JOD-Xe-DEw" eventType="editingDidEndOnExit" id="53I-EC-bhM"/>
                                                         <outlet property="delegate" destination="JOD-Xe-DEw" id="nnb-Hw-325"/>
                                                     </connections>
                                                 </textField>
@@ -162,18 +161,18 @@
                     <navigationItem key="navigationItem" title="Add Item" largeTitleDisplayMode="never" id="79c-4u-yCw">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="59P-Zm-JmV">
                             <connections>
-                                <action selector="cancel" destination="JOD-Xe-DEw" id="wnu-TN-OcR"/>
+                                <action selector="cancel" destination="JOD-Xe-DEw" id="IkW-Ja-lsd"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="SP6-aj-4pm">
                             <connections>
-                                <action selector="done" destination="JOD-Xe-DEw" id="SFg-RB-HqS"/>
+                                <action selector="done" destination="JOD-Xe-DEw" id="54g-HL-89M"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="doneBarButton" destination="SP6-aj-4pm" id="ljx-Nb-8LU"/>
-                        <outlet property="textField" destination="sXo-2H-DDP" id="Iqx-3r-LNK"/>
+                        <outlet property="doneBarButton" destination="SP6-aj-4pm" id="ENd-EK-rRO"/>
+                        <outlet property="textField" destination="sXo-2H-DDP" id="IrT-BV-JBr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNA-ia-OYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -201,7 +200,7 @@
         <!--Add Checklist-->
         <scene sceneID="0Gh-ua-3s4">
             <objects>
-                <tableViewController id="23e-Yv-HGv" customClass="ListDetailViewController" customModule="todolist" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ListDetailViewController" id="23e-Yv-HGv" customClass="ListDetailViewController" customModule="todolist" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="7Ad-ce-agR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -269,6 +268,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="gAh-We-sCj"/>
-        <segue reference="UiW-bs-Qqe"/>
+        <segue reference="hCy-qg-eLQ"/>
     </inferredMetricsTieBreakers>
 </document>
